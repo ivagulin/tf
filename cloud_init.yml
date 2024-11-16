@@ -1,0 +1,14 @@
+#cloud-config
+users:
+  - name: root
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCzrm/GOdEG+wp5I6Ntl/CL4zuJpJtz5nm+/g4pZ8wexh1pz76n4m+tyae151GplYa+b2FIId8o3vgF8BTZv2O9qlPNEA0WM0j4uVhSP+MIAsb4WEvFxAeZbt/GiGUCLNvRGzJFL9oI6z8A0nCzYd+/gA1G/dOkELmkGnt/y3FcFjcafWJPqGxLTUIWRIXo0CJjRl0/DvMAxdlQILdiYInUQbSZIKg2pQiCopid0PoO3I/dW8hAi0zeP0rvGjDZ2JfhAikPH2FkCeMcnnh2Hn1SXGr/ijRTvfHLK9YPxpKeiifEaE6vSSOncaMi9N+6uDLUxVINVf5ur30ymnamISv1 igor@ivagulin-pc.localdomain
+
+growpart:
+  devices: [ / ]
+  mode: auto
+
+# 1q2w3e
+#    passwd: $5$R068zJeQrw6uAHY6$e4S0e4KwJqjbQEF4VqH2Lvrn9EFuo8vOtSPvpiiT4J6

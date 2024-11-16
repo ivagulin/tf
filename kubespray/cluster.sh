@@ -1,0 +1,1 @@
+docker run --network host --rm -it --mount type=bind,source="$(pwd)"/inventory/mycluster,dst=/inventory --mount type=bind,source="${HOME}"/.ssh/id_rsa,dst=/root/.ssh/id_rsa quay.io/kubespray/kubespray:v2.25.1 ansible-playbook -i /inventory/hosts.yaml --private-key /root/.ssh/id_rsa --user root cluster.yml
