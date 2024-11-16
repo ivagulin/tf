@@ -10,5 +10,7 @@ growpart:
   devices: [ / ]
   mode: auto
 
+hostname: ${hostname}
+
 # 1q2w3e
 #    passwd: $5$R068zJeQrw6uAHY6$e4S0e4KwJqjbQEF4VqH2Lvrn9EFuo8vOtSPvpiiT4J6

@@ -1,0 +1,23 @@
+---
+- name: Configure dnsmasq
+  hosts: all
+  become: True
+  tasks:
+    - name: update cache
+      ansible.builtin.apt:
+        update_cache: true
+
+    - name: install dnsmasq
+      ansible.builtin.apt:
+        pkg: dnsmasq
+        state: present
+
+    - name: configure dnsmasq
+      ansible.builtin.template:
+        dest: /etc/dnsmasq.conf
+        src: dnsmasq.conf.j2
+
+    - name: restart dnsmasq
+      ansible.builtin.systemd_service:
+        state: restarted
+        name: dnsmasq

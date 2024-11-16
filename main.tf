@@ -34,7 +34,11 @@ data "template_file" "network_config" {
 }
 
 data "template_file" "user_data" {
+  for_each = var.instances
   template = file("${path.module}/cloud_init.yml")
+  vars = {
+    hostname = each.key
+  }
 }
 
 # for more info about paramater check this out
@@ -45,7 +49,7 @@ resource "libvirt_cloudinit_disk" "commoninit" {
   for_each = var.instances
 
   name           = format("cloudinit-%s.iso", each.key)
-  user_data      = data.template_file.user_data.rendered
+  user_data      = data.template_file.user_data[each.key].rendered
   network_config = data.template_file.network_config[each.key].rendered
 }
 

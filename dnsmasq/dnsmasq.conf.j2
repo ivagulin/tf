@@ -1,0 +1,14 @@
+domain-needed
+bogus-priv
+expand-hosts
+
+listen-address={{ ansible_facts['default_ipv4']['address'] }}
+bind-interfaces
+
+# Use open source DNS servers
+server=8.8.8.8
+server=8.8.4.4
+
+# Create custom 'domains'.
+# Custom 'domains' can also be added in /etc/hosts
+# address=/busyserver.net/192.168.0.176
