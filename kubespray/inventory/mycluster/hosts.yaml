@@ -12,6 +12,18 @@ all:
       ansible_host: 192.168.100.12
       ip: 192.168.100.12
       access_ip: 192.168.100.12
+    node4:
+      ansible_host: 192.168.100.20
+      ip: 192.168.100.20
+      access_ip: 192.168.100.20
+    node5:
+      ansible_host: 192.168.100.21
+      ip: 192.168.100.21
+      access_ip: 192.168.100.21
+    node6:
+      ansible_host: 192.168.100.22
+      ip: 192.168.100.22
+      access_ip: 192.168.100.22
   children:
     kube_control_plane:
       hosts:
@@ -23,6 +35,9 @@ all:
         node1:
         node2:
         node3:
+        node4:
+        node5:
+        node6:
     etcd:
       hosts:
         node1:

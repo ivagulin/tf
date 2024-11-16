@@ -13,14 +13,23 @@ provider "libvirt" {
 variable "instances" {
   type = any
   default = {
-    "vm1" = {
+    "server1" = {
       "ip" = "192.168.100.10"
     }
-    "vm2" = {
+    "server2" = {
       "ip" = "192.168.100.11"
     }
-    "vm3" = {
+    "server3" = {
       "ip" = "192.168.100.12"
+    }
+    "agent1" = {
+      "ip" = "192.168.100.20"
+    }
+    "agent2" = {
+      "ip" = "192.168.100.21"
+    }
+    "agent3" = {
+      "ip" = "192.168.100.22"
     }
   }
 }
